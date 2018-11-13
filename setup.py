@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(name='hackerman',
-	version='0.4',
+	version='0.5',
 	description='A python library for penetration testing, security, development, and fun.',
 	url='https://github.com/AgeOfMarcus/hackerman',
 	author='Marcus Weinberger',

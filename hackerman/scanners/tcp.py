@@ -15,6 +15,7 @@ def rand_ipv6():
 
 def knock(ip,port):
 	c = socket.socket()
+	c.settimeout(1)
 	try:
 		c.connect((ip,port))
 		c.close()
