@@ -9,4 +9,8 @@ setuptools.setup(name='hackerman',
 	license='GPL',
 	packages=setuptools.find_packages(),
 	zip_safe=False,
-	install_requires=[])
+	install_requires=[
+		"pycrypto",
+		"flask",
+		"requests",
+	])
