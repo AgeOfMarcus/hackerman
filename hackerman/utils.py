@@ -1,4 +1,4 @@
-import os, base64, hashlib, sqlite3
+import os, base64, hashlib, sqlite3, socket
 from subprocess import Popen, PIPE
 
 sh = lambda cmd: Popen(cmd,stdout=PIPE,shell=True).communicate()[0]
@@ -6,6 +6,9 @@ sha256 = lambda raw: hashlib.sha256(raw).hexdigest()
 
 b64e = lambda raw: base64.b64encode(raw).decode()
 b64d = lambda b64: base64.b64decode(b64)
+
+addr2ip = lambda addr: socket.gethostbyname(addr)
+hostname = socket.gethostname
 
 def force_decode(raw):
 	try:
