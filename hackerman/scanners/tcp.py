@@ -13,9 +13,9 @@ def rand_ipv6():
 	addr_str = addr.compressed
 	return addr_str
 
-def knock(ip,port):
+def knock(ip,port, timeout=0.5):
 	c = socket.socket()
-	c.settimeout(1)
+	c.settimeout(timeout)
 	try:
 		c.connect((ip,port))
 		c.close()
