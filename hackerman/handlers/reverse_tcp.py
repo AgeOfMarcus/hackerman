@@ -31,7 +31,9 @@ class Handler(object):
 		return res['res']
 
 	def exec(self, cmd, bg=False):
-		msg = {"type":"exec","cmd":cmd,"out":utils.safe_uid(),"bg":bg}
+		out = utils.safe_uid()
+		cmd = out+"="+cmd
+		msg = {"type":"exec","cmd":cmd,"out":out,"bg":bg}
 		res = self.do_msg(msg)
 		return utils.b64d(res['res'])
 

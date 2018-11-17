@@ -1,3 +1,6 @@
+# 0.6.6
+	- Ok last bugfix fo real in that
+
 # 0.6.5
 	- Hopefully last bugfix in tcp pl/hl
 		- just en/de code everything in b64
