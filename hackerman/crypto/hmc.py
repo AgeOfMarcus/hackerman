@@ -2,11 +2,11 @@ import base64
 
 def to_num(raw):
 	res = []
-	for i in string: res.append(i)
+	for i in raw: res.append(i)
 	return res
 def from_num(nums):
-	res = ''
-	for i in nums: res += chr(i)
+	res = b''
+	for i in nums: res += (i).to_bytes(1,"little")
 	return res
 
 def n_encrypt(nums,pwnums):
@@ -29,12 +29,10 @@ def n_decrypt(nums,pwnums):
 	return res
 
 def encrypt(raw, password):
-	safe = base64.b64encode(raw).decode()
-	n_ec = n_encrypt(to_num(safe),to_num(password))
+	n_ec = n_encrypt(to_num(raw),to_num(password.encode()))
 	enc = from_num(n_ec)
-	return enc.encode()
-def decrypt(enc, password):
-	n_ec = to_num(enc)
-	safe = n_decrypt(n_ec,to_num(password))
-	dec = base64.b64decode(from_num(safe))
+	return enc
+def decrypt(raw, password):
+	n_ec = to_num(raw)
+	dec = from_num(n_decrypt(n_ec,to_num(password.encode())))
 	return dec

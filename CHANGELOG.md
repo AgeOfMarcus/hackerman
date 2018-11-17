@@ -1,3 +1,7 @@
+# 0.6.8
+	- Fixed hackerman.crypto.hmc
+	- Added hackerman.crypto.blowfish
+
 # 0.6.7
 	- If this doesn't do it then i'm leaving it till tomorrow
 
