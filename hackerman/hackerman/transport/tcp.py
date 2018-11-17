@@ -24,9 +24,6 @@ class Server(object):
 		got = "".encode()
 		this = self.conn.recv(buff)
 		while not this == end_s:
-			if this.endswith(end_s):
-				got += this.split(end_s)[0]
-				break
 			got += this
 			this = self.conn.recv(buff)
 		return got
@@ -50,9 +47,6 @@ class Client(object):
 		got = "".encode()
 		this = self.conn.recv(buff)
 		while not this == end_s:
-			if this.endswith(end_s):
-				got += this.split(end_s)[0]
-				break
 			got += this
 			this = self.conn.recv(buff)
 		return got
