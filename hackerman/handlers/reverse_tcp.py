@@ -49,6 +49,6 @@ class Handler(object):
 
 	def exit(self):
 		msg = {"type":"exit"}
-		_thread.start_new_thread(self.do_msg, (msg))
-		return "ok"
+		res = self.do_msg(msg)
+		return res['res']
 

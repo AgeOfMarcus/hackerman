@@ -1,3 +1,6 @@
+# 0.6.7
+	- If this doesn't do it then i'm leaving it till tomorrow
+
 # 0.6.6
 	- Ok last bugfix fo real in that
 

