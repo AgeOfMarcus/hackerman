@@ -1,3 +1,7 @@
+# 0.6.5
+	- Hopefully last bugfix in tcp pl/hl
+		- just en/de code everything in b64
+
 # 0.6.4
 	- Fixed bugs in reverse tcp payload and handler
 		- sending/recieving files

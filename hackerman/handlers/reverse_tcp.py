@@ -33,7 +33,7 @@ class Handler(object):
 	def exec(self, cmd, bg=False):
 		msg = {"type":"exec","cmd":cmd,"out":utils.safe_uid(),"bg":bg}
 		res = self.do_msg(msg)
-		return res['res']
+		return utils.b64d(res['res'])
 
 	def dl(self, fn, bg=False):
 		msg = {"type":"dl","fn":fn,"bg":bg}

