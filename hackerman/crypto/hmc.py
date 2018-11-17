@@ -1,8 +1,8 @@
 import base64
 
-def to_num(string):
+def to_num(raw):
 	res = []
-	for i in string: res.append(ord(i))
+	for i in string: res.append(i)
 	return res
 def from_num(nums):
 	res = ''
@@ -32,7 +32,7 @@ def encrypt(raw, password):
 	safe = base64.b64encode(raw).decode()
 	n_ec = n_encrypt(to_num(safe),to_num(password))
 	enc = from_num(n_ec)
-	return enc
+	return enc.encode()
 def decrypt(enc, password):
 	n_ec = to_num(enc)
 	safe = n_decrypt(n_ec,to_num(password))

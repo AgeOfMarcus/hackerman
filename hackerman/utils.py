@@ -1,5 +1,8 @@
-import os, base64, hashlib, sqlite3, socket
+import os, base64, hashlib, sqlite3, socket, uuid
 from subprocess import Popen, PIPE
+
+uid = lambda: str(uuid.uuid4())
+safe_uid = lambda: ''.join(str(uuid.uuid4()).split("-"))
 
 sh = lambda cmd: Popen(cmd,stdout=PIPE,shell=True).communicate()[0]
 sha256 = lambda raw: hashlib.sha256(raw).hexdigest()
