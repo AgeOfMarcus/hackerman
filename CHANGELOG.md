@@ -1,3 +1,8 @@
+# 0.6.4
+	- Fixed bugs in reverse tcp payload and handler
+		- sending/recieving files
+		- sending cmds
+
 # 0.6.3
 	- HMC encryption now returnes bytes instead of str
 	- Added reverse TCP payload

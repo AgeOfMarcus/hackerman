@@ -21,7 +21,7 @@ class Handler(object):
 		return t_r
 
 	def sh(self, cmd, bg=False):
-		msg = {"type":"cmd","cmd":cmd,"bg":bg}
+		msg = {"type":"sh","cmd":cmd,"bg":bg}
 		res = self.do_msg(msg)
 		return res['res']
 
@@ -38,10 +38,10 @@ class Handler(object):
 	def dl(self, fn, bg=False):
 		msg = {"type":"dl","fn":fn,"bg":bg}
 		res = self.do_msg(msg)
-		return res['res']
+		return utils.b64d(res['res'])
 
 	def ul(self, in_file, out_file, bg=False):
-		msg = {"type":"ul","fn":out_file,"data":open(in_file,"rb").read(),"bg":bg}
+		msg = {"type":"ul","fn":out_file,"data":utils.b64e(open(in_file,"rb").read()),"bg":bg}
 		res = self.do_msg(msg)
 		return res['res']
 
