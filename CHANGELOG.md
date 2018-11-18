@@ -1,3 +1,8 @@
+# 0.6.9 (nice)
+	- Fixed hackerman.crypto.hmc not using full password
+	- Gave up on exec methon in reverse_tcp
+	- Fixed exit in reverse_tcp
+
 # 0.6.8
 	- Fixed hackerman.crypto.hmc
 	- Added hackerman.crypto.blowfish

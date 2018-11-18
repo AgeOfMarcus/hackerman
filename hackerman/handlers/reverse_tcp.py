@@ -30,12 +30,12 @@ class Handler(object):
 		res = self.do_msg(msg)
 		return res['res']
 
-	def exec(self, cmd, bg=False):
-		out = utils.safe_uid()
-		cmd = out+"="+cmd
-		msg = {"type":"exec","cmd":cmd,"out":out,"bg":bg}
-		res = self.do_msg(msg)
-		return utils.b64d(res['res'])
+	# def exec(self, cmd, bg=False):
+	# 	out = utils.safe_uid()
+	# 	cmd = out+"="+cmd
+	# 	msg = {"type":"exec","cmd":cmd,"out":out,"bg":bg}
+	# 	res = self.do_msg(msg)
+	# 	return utils.b64d(res['res'])
 
 	def dl(self, fn, bg=False):
 		msg = {"type":"dl","fn":fn,"bg":bg}
@@ -48,7 +48,7 @@ class Handler(object):
 		return res['res']
 
 	def exit(self):
-		msg = {"type":"exit"}
+		msg = {"type":"exit","bg":False}
 		res = self.do_msg(msg)
 		return res['res']
 

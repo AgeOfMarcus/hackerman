@@ -13,7 +13,7 @@ def n_encrypt(nums,pwnums):
 	res = []
 	this = 0
 	for i in nums:
-		if this == len(pwnums) -1:
+		if this == len(pwnums):
 			this = 0
 		res.append(i+pwnums[this])
 		this += 1
@@ -22,7 +22,7 @@ def n_decrypt(nums,pwnums):
 	res = []
 	this = 0
 	for i in nums:
-		if this == len(pwnums) -1:
+		if this == len(pwnums):
 			this = 0
 		res.append(i-pwnums[this])
 		this += 1
