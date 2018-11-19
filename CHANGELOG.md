@@ -1,3 +1,6 @@
+# 0.7.1
+	- Changed sh method in reverse_tcp to return raw
+
 # 0.7.0
 	- Fixed reverse_tcp bg commands
 
