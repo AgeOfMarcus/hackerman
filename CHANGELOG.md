@@ -1,3 +1,6 @@
+# 0.7.0
+	- Fixed reverse_tcp bg commands
+
 # 0.6.9 (nice)
 	- Fixed hackerman.crypto.hmc not using full password
 	- Gave up on exec methon in reverse_tcp

