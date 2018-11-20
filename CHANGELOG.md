@@ -1,3 +1,7 @@
+# 0.7.2
+	- Added utils:
+		- rand_bytes
+
 # 0.7.1
 	- Changed sh method in reverse_tcp to return raw
 

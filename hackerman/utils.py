@@ -1,4 +1,4 @@
-import os, base64, hashlib, sqlite3, socket, uuid
+import os, base64, hashlib, sqlite3, socket, uuid, random
 from subprocess import Popen, PIPE
 
 uid = lambda: str(uuid.uuid4())
@@ -39,4 +39,10 @@ def sqlexec(cmd,db_file):
 		except Exception as e:
 			res = str(e)
 		db.commit()
+	return res
+
+def rand_bytes(num=16):
+	res = b''
+	while len(res) < num:
+		res += chr(random.randint(0,0x110000)).encode()
 	return res
