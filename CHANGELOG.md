@@ -1,3 +1,7 @@
+# 0.7.3
+	- Improved hackerman.utils.interactive_sh with KeyboardInterrupt
+	- Added hackerman.transport.serveo (tcp, http) serveo integration
+
 # 0.7.2
 	- Added utils:
 		- rand_bytes

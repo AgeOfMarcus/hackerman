@@ -29,8 +29,13 @@ def cd(newdir):
 
 def interactive_sh(cmd, out_func):
 	process = Popen(cmd,stdout=PIPE,stderr=PIPE,shell=True)
-	for ln in iter(process.stdout.readline, b''):
-		out_func(force_decode(ln))
+	try:
+		for ln in iter(process.stdout.readline, b''):
+			out_func(ln)
+	except KeyboardInterrupt:
+		os.system("pkill -f \"%s\"" % cmd)
+		out_func(ln)
+
 
 def sqlexec(cmd,db_file):
 	with sqlite3.connect(db_file) as db:
