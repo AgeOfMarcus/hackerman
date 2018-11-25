@@ -1,3 +1,6 @@
+# 0.7.4
+	- Added onion domain generator in hackerman.scanners.tcp
+
 # 0.7.3
 	- Improved hackerman.utils.interactive_sh with KeyboardInterrupt
 	- Added hackerman.transport.serveo (tcp, http) serveo integration
