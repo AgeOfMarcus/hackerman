@@ -1,13 +1,6 @@
 from random import getrandbits
 from ipaddress import IPv4Address, IPv6Address
-from Crypto.PublicKey import RSA
-import socket, os, base64, hashlib
-
-def rand_onion():
-	key = RSA.generate(1024)
-	pub = key.publickey().exportKey("PEM")
-	onion = base64.b32encode(hashlib.sha1(pub).digest()[:10]).lower().decode()
-	return onion+".onion"
+import socket
 
 def rand_ipv4():
 	bits = getrandbits(32) # integer with 32 random bits

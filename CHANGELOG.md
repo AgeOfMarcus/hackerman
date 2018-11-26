@@ -1,3 +1,11 @@
+# 0.8.0
+	- Moved onion stuff from hackerman.scanners.tcp to hackerman.crypto.onion
+	- Finished hackerman.transport.covert.jsc
+
+# 0.7.5
+	- Created hackerman.transport.covert
+		- hackerman.transport.covert.jsc
+
 # 0.7.4
 	- Added onion domain generator in hackerman.scanners.tcp
 
