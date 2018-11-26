@@ -18,4 +18,5 @@ setuptools.setup(name='hackerman',
 		"pycrypto",
 		"flask",
 		"requests",
+		"scapy"
 	])
