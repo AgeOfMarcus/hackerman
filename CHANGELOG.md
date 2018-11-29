@@ -1,3 +1,7 @@
+# 0.8.2
+	- Added hackerman.transport.dot11
+		- Beacon class
+
 # 0.8.1
 	- Fixed hackerman.transport.serveo
 
