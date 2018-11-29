@@ -9,7 +9,7 @@ def http(lport,subdomain=None):
 	if subdomain is None:
 		cmd = "ssh -R 80:localhost:%s serveo.net"
 	else:
-		cmd = "ssh -R 80:localhost:%s {}@serveo.net".format(
+		cmd = "ssh -R {}.serveo.net:80:localhost:%s serveo.net".format(
 			subdomain
 		)
 	os.system(cmd % str(lport))
