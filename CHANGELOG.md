@@ -1,3 +1,9 @@
+# 0.8.3
+	- Improvements and bugfixes in
+		- hackerman.transport.dot11
+			- Beacon
+	- Added hackerman.scanners._http
+
 # 0.8.2
 	- Added hackerman.transport.dot11
 		- Beacon class
