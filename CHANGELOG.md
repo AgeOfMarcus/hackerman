@@ -3,6 +3,8 @@
 		- hackerman.transport.dot11
 			- Beacon
 	- Added hackerman.scanners._http
+	- Added hackerman.transport.arp
+		- Ability to arpspoof with scapy
 
 # 0.8.2
 	- Added hackerman.transport.dot11
