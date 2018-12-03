@@ -1,3 +1,8 @@
+# 0.8.4
+	- Changed from pyCrypto to pyCryptodome because
+		- Speed
+		- Compatability
+
 # 0.8.3
 	- Improvements and bugfixes in
 		- hackerman.transport.dot11
