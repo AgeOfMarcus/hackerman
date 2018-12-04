@@ -1,3 +1,7 @@
+# 0.8.5
+	- Added hackerman.transport.dns
+	- Added hackerman.transport.covert.dns
+
 # 0.8.4
 	- Changed from pyCrypto to pyCryptodome because
 		- Speed
