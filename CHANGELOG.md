@@ -1,3 +1,6 @@
+# 0.8.8
+	- PyPi wouldn't let me upload 0.8.7 because i deleted it to re-upload so yeah
+
 # 0.8.7
 	- Actually finished hackerman.transport.covert.dns
 
