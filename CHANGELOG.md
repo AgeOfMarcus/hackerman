@@ -1,3 +1,8 @@
+# 0.8.6
+	- Finished hackerman.transport.covert.dns
+		- Client: slower but more covert
+		- SpeedyClient: quicker (8x) but more detectable
+
 # 0.8.5
 	- Added hackerman.transport.dns
 	- Added hackerman.transport.covert.dns
