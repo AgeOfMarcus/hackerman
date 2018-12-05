@@ -86,7 +86,10 @@ class SpeedyClient(object):
 				self.stop = True
 			self.buf += self.on_pkt(pkt)
 		except AttributeError:
-			pass
+			try:
+				self.buf += self.on_pkt(pkt)
+			except:
+				pass
 
 	def recv(self):
 		self.buf = b''
@@ -98,6 +101,7 @@ class SpeedyClient(object):
 		buf = self.buf
 		self.buf = b''
 		return buf
+
 	def send(self, raw):
 		enc = utils.b64e(raw)
 		buf = 0

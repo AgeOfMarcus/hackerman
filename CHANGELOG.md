@@ -1,3 +1,6 @@
+# 0.8.9
+	- Fixed hackerman.transport.covert.dns.SpeedyClient not sending complete data
+
 # 0.8.8
 	- PyPi wouldn't let me upload 0.8.7 because i deleted it to re-upload so yeah
 
