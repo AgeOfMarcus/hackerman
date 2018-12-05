@@ -1,3 +1,6 @@
+# 0.8.9
+	- Actually finished hackerman.transport.covert.dns
+
 # 0.8.6
 	- Finished hackerman.transport.covert.dns
 		- Client: slower but more covert

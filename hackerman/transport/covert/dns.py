@@ -70,7 +70,7 @@ class Client(object):
 class SpeedyClient(object):
 	def __init__(self, listen="listen.com", send="send.com"):
 		self.listen = listen
-		self.send = send
+		self.send_d = send
 		self.eof = 6969 # nice
 		self.buf = b''
 	def on_pkt(self, pkt):
@@ -81,11 +81,37 @@ class SpeedyClient(object):
 	def decrypt(self, pkt):
 		return utils.b64d(pkt['DNS'].qd.qname.decode().split(".")[0])
 	def prn(self, pkt):
-		self.buf += self.on_pkt(pkt)
+		try:
+			if pkt.sport == self.eof:
+				self.stop = True
+			self.buf += self.on_pkt(pkt)
+		except AttributeError:
+			pass
 
 	def recv(self):
 		self.buf = b''
+		self.stop = False
 
-		while True:
+		while not self.stop:
+			scapy.sniff(store=0, stop_filter=lambda x: scapy.DNS in x, prn=self.prn)
+
+		buf = self.buf
+		self.buf = b''
+		return buf
+	def send(self, raw):
+		enc = utils.b64e(raw)
+		buf = 0
+
+		while not buf >= len(enc):
+			ts = enc[buf:buf+8]
+			domain = ts+"."+self.send_d
+
+			pkt = dns.DNS(qname=domain)
+			pkt.send()
+
+			buf += 8
+
+		pkt = dns.DNS(sport=self.eof)
+		pkt.send()
 			
 		
