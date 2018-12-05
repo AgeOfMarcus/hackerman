@@ -1,4 +1,4 @@
-# 0.8.9
+# 0.8.7
 	- Actually finished hackerman.transport.covert.dns
 
 # 0.8.6
