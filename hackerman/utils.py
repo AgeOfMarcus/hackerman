@@ -51,3 +51,8 @@ def rand_bytes(num=16):
 	while len(res) < num:
 		res += chr(random.randint(0,0x110000)).encode()
 	return res
+
+def getfilesize(fn):
+	r = sh("du "+fn).decode().strip()
+	bt = r.split("\t")[0]
+	return int(bt)

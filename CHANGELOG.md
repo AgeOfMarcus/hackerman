@@ -1,5 +1,6 @@
 # 0.8.10 (apparently it's not 0.9.0)
-	- Added hackerman.transport.covert.dot11
+	- Added hackerman.transport.covert.dot11 (unfinished)
+	- Added getfilesize to hackerman.utils
 
 # 0.8.9
 	- Fixed hackerman.transport.covert.dns.SpeedyClient not sending complete data
