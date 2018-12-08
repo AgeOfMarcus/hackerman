@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request, send_file
+from flask_cors import CORS
 import _thread
 
 from hackerman.utils import sh, cd, b64e, b64d
@@ -8,6 +9,7 @@ class Server(object):
         self.addr = addr
     def run(self):
         app = Flask(__name__)
+	CORS(app)
         @app.route("/", methods=['POST'])
         def app_main():
             pl = request.form

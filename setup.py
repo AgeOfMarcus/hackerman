@@ -17,6 +17,7 @@ setuptools.setup(name='hackerman',
 	install_requires=[
 		"pycryptodome",
 		"flask",
+		"flask-cors",
 		"requests",
 		"scapy"
 	])
