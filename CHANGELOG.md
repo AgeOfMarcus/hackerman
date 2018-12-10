@@ -1,3 +1,7 @@
+# 0.8.13
+	- Okay hackerman.transport.covert.dot11 isnt done yet
+	- Added hackerman.transport.ptpb
+
 # 0.8.12
 	- Finished hackerman.transport.covert.dot11
 	- Added "reverse" payload with covert DNS transport (kinda mostly works)
