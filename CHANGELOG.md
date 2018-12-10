@@ -1,3 +1,7 @@
+# 0.8.11
+	- Improved getfilesize in hackerman.utils to work with folders
+	- hackerman.transport.covert.dot11 is still unfinished lol oof
+
 # 0.8.10 (apparently it's not 0.9.0)
 	- Added hackerman.transport.covert.dot11 (unfinished)
 	- Added getfilesize to hackerman.utils

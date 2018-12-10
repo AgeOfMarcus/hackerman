@@ -53,6 +53,6 @@ def rand_bytes(num=16):
 	return res
 
 def getfilesize(fn):
-	r = sh("du "+fn).decode().strip()
+	r = sh("du "+fn).decode().strip().split("\n")[-1]
 	bt = r.split("\t")[0]
 	return int(bt)
