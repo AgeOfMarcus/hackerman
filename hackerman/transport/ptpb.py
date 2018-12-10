@@ -5,7 +5,7 @@ def create_link():
 	dat = utils.rand_bytes().decode()
 	req = requests.post("https://ptpb.pw/",data={'c':dat})
 	res = req.content.decode().strip()
-	url = res.split("\n")[7].split(": ")[1]
+	url = res.split("\n")[6].split(": ")[1]
 	uid = res.split("\n")[-1].split(": ")[1]
 	return url, uid
 
