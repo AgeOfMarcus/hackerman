@@ -1,3 +1,11 @@
+# 0.8.12
+	- Finished hackerman.transport.covert.dot11
+	- Added "reverse" payload with covert DNS transport (kinda mostly works)
+		- hackerman.handlers.reverse_dns
+			- Handler
+		- hackerman.payloads.reverse.dns
+			- Payload
+
 # 0.8.11
 	- Improved getfilesize in hackerman.utils to work with folders
 	- hackerman.transport.covert.dot11 is still unfinished lol oof
