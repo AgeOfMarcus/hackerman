@@ -2,7 +2,7 @@ from hackerman import utils
 import requests
 
 def create_link():
-	dat = utils.random_bytes().decode()
+	dat = utils.rand_bytes().decode()
 	req = requests.post("https://ptpb.pw/",data={'c':dat})
 	res = req.content.decode().strip()
 	url = res.split("\n")[7].split(": ")[1]

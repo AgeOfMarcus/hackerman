@@ -1,3 +1,6 @@
+# 0.8.14
+	- Quick fix for hackerman.transport.ptpb
+
 # 0.8.13
 	- Okay hackerman.transport.covert.dot11 isnt done yet
 	- Added hackerman.transport.ptpb
