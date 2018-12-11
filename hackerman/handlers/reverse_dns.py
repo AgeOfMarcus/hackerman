@@ -1,7 +1,7 @@
 from hackerman.transport.covert import dns
 from hackerman.crypto import xor
 from hackerman import utils
-import json
+import json, time
 
 class NoCrypt(object):
 	def encrypt(self, raw):

@@ -1,3 +1,8 @@
+# 0.9.0	(i don't like doing the double digit final things)
+	- Okay so that was a lie, hackerman.transport.ptpb will never work for reasons, so i deleted that
+	- still working on hackerman.transport.covert.dot11
+	- working a bit more on the reverse dns payload/handler
+
 # 0.8.15
 	- final bugfix for hackerman.transport.ptpb
 

