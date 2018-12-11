@@ -1,3 +1,6 @@
+# 0.9.2
+	- Nevermind, back to UDP, TCP is difficult
+
 # 0.9.1
 	- Forgot to mention updated the docs in 0.9.0, still a while to go
 	- Changed DNS requests from UDP to TCP for better transport

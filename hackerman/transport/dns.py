@@ -6,6 +6,6 @@ class DNS(object):
 		self.sport = sport
 		self.qname = qname
 	def pkt(self):
-		return scapy.IP(dst=self.dst)/scapy.TCP(sport=self.sport)/scapy.DNS(rd=1, qd=scapy.DNSQR(qname=self.qname))
+		return scapy.IP(dst=self.dst)/scapy.UDP(sport=self.sport)/scapy.DNS(rd=1, qd=scapy.DNSQR(qname=self.qname))
 	def send(self):
 		scapy.send(self.pkt())
