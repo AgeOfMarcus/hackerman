@@ -1,3 +1,7 @@
+# 0.9.1
+	- Forgot to mention updated the docs in 0.9.0, still a while to go
+	- Changed DNS requests from UDP to TCP for better transport
+
 # 0.9.0	(i don't like doing the double digit final things)
 	- Okay so that was a lie, hackerman.transport.ptpb will never work for reasons, so i deleted that
 	- still working on hackerman.transport.covert.dot11
