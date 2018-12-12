@@ -1,3 +1,6 @@
+# 0.9.4
+	- Quick changes to hackerman.stagers.examples.tcp
+
 # 0.9.3
 	- Added hackerman.stagers
 		- ptpb
