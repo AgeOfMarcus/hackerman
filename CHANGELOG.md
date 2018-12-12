@@ -1,3 +1,15 @@
+# 0.9.3
+	- Added hackerman.stagers
+		- ptpb
+			- upload (function)
+			- example (.py)
+		- http
+			- Server (class)
+			- example (.py_
+		- tcp
+			- Server (class)
+			- example (.py)
+
 # 0.9.2
 	- Nevermind, back to UDP, TCP is difficult
 
