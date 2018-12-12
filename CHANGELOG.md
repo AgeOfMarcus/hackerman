@@ -2,13 +2,19 @@
 	- Added hackerman.stagers
 		- ptpb
 			- upload (function)
-			- example (.py)
 		- http
-			- Server (class)
-			- example (.py_
+			- serve_once (function)
+			- serve (function)
 		- tcp
-			- Server (class)
-			- example (.py)
+			- serve_once (function)
+			- serve (function)
+		- examples (dir)
+			- ptpb.py
+			- http.py
+			- tcp.py
+	- Added features to hackerman.transport.tcp
+		- RawServer (class) (regular tcp server)
+		- RawClient (class) (regular tcp client)
 
 # 0.9.2
 	- Nevermind, back to UDP, TCP is difficult
