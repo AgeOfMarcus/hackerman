@@ -1,3 +1,6 @@
+# 0.9.6
+	- Added hackerman.transport.smtp
+
 # 0.9.5
 	- Added hackerman.rat (Remote Access Tools)
 		- gui
