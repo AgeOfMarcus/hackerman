@@ -13,13 +13,13 @@ class SMTP(object):
 			if tls:
 				self.server.starttls()
 		except:
-			raise RuntimeError("Connection error")
+			raise BaseException("Connection error")
 
 	def login(self, username, password):
 		try:
 			self.server.login(username, password)
 		except:
-			raise RuntimeError("Login failed")
+			raise BaseException("Login failed")
 
 	def send(self, sent_from, to, subject, body):
 		msg = "\r\n".join([
@@ -31,7 +31,7 @@ class SMTP(object):
 		try:
 			self.server.sendmail(sent_from, to, msg)
 		except:
-			raise RuntimeError("Error sending email")
+			raise BaseException("Error sending email")
 
 	def close(self):
 		self.server.close()

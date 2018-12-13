@@ -1,3 +1,6 @@
+# 0.9.7
+	- changed RuntimeErrors to BaseExceptions
+
 # 0.9.6
 	- Added hackerman.transport.smtp
 
