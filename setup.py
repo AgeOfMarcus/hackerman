@@ -5,7 +5,7 @@ def read(fname):
 	return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setuptools.setup(name='hackerman',
-	version='0.9.4',
+	version='0.9.5',
 	description='A python library for penetration testing, security, development, and fun.',
 	long_description=read("README.md"),
 	url='https://github.com/AgeOfMarcus/hackerman',
@@ -19,5 +19,7 @@ setuptools.setup(name='hackerman',
 		"flask",
 		"flask-cors",
 		"requests",
-		"scapy"
+		"scapy",
+		"pyscreenshot",
+		"pynput"
 	])

@@ -1,3 +1,15 @@
+# 0.9.5
+	- Added hackerman.rat (Remote Access Tools)
+		- gui
+			- screenshot
+				- box (function)
+				- all (function)
+			- keyboard
+				- Keyboard (class)
+					- win_r, enter, alt_f4
+					- type
+				- keylogger
+
 # 0.9.4
 	- Quick changes to hackerman.stagers.examples.tcp
 
