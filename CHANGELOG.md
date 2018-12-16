@@ -1,3 +1,6 @@
+# 0.9.8
+	- Added hackerman.transport.covert.ptpb
+
 # 0.9.7
 	- changed RuntimeErrors to BaseExceptions
 
