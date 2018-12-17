@@ -1,3 +1,6 @@
+# 0.9.9
+	- Renamed libs named "http.py" to "_http.py"
+
 # 0.9.8
 	- Added hackerman.transport.covert.ptpb
 
