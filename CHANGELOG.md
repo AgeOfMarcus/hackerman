@@ -1,3 +1,9 @@
+# 0.10.0
+	- Deleted hackerman.transport.covert.ptpb
+	- Improved hackerman.transport.ptpb to be actual transport
+	- Added hackerman.payloads.reverse.ptpb
+	- And hackerman.handlers.reverse_ptpb to go with it
+
 # 0.9.9
 	- Renamed libs named "http.py" to "_http.py"
 
