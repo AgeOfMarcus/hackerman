@@ -1,3 +1,6 @@
+# 0.10.1
+	- Bugfixes in reverse_ptpb
+
 # 0.10.0
 	- Deleted hackerman.transport.covert.ptpb
 	- Improved hackerman.transport.ptpb to be actual transport
