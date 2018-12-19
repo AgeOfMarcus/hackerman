@@ -15,7 +15,7 @@ class Payload(object):
 			try:
 				if self.cli.recv().decode() == "ready":
 					break
-			except:
+			except ValueError:
 				pass
 		self.cli.send("okay".encode())
 
