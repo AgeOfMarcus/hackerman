@@ -1,5 +1,8 @@
 # 0.10.1
-	- Bugfixes in reverse_ptpb
+	- Bugfixes in reverse_ptpb (still not done)
+	- Standard reverse payload and handler structures in
+		- hackerman.payloads.reverse.base
+		- hackerman.handlers.reverse_base
 
 # 0.10.0
 	- Deleted hackerman.transport.covert.ptpb
