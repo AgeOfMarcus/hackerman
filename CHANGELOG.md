@@ -1,3 +1,6 @@
+# 0.10.2
+	- Bugfixes in reverse base payload&handler
+
 # 0.10.1
 	- Bugfixes in reverse_ptpb (still not done)
 	- Standard reverse payload and handler structures in

