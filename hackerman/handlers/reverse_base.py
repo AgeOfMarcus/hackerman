@@ -1,3 +1,4 @@
+from hackerman import utils
 import json
 
 class BaseHandler(object):
@@ -18,15 +19,15 @@ class BaseHandler(object):
 		return res
 	def sh(self, cmd):
 		msg = {"type":"sh", 'cmd':cmd}
-		return self.send_cmd(msg)['res']
+		return utils.b64d(self.send_cmd(msg)['res'])
 	def eval(self, cmd):
 		msg = {'type':'eval','cmd':cmd}
 		return self.send_cmd(msg)['res']
 	def dl(self, fn):
 		msg = {'type':'dl','fn':fn}
-		return self.send_cmd(msg)['res']
+		return utils.b64d(self.send_cmd(msg)['res'])
 	def ul(self, fn, fd):
-		msg = {'type':'ul','fn':fn,'fd':fd}
+		msg = {'type':'ul','fn':fn,'fd':utils.b64e(fd)}
 		return self.send_cmd(msg)['res']
 	def exit(self):
 		msg = {'type':'exit'}

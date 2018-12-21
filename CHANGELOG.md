@@ -1,3 +1,6 @@
+# 0.10.4
+	- fixed base
+
 # 0.10.3
 	- Nevermind that changed nothing, trying again to fix base
 
