@@ -1,3 +1,6 @@
+# 0.10.5
+	- Actually fixed base
+
 # 0.10.4
 	- fixed base
 

