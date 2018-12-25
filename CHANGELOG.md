@@ -1,3 +1,6 @@
+# 0.10.6
+	- Added hackerman.transport.fileio just for fun
+
 # 0.10.5
 	- Actually fixed base
 
