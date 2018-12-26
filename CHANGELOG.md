@@ -1,3 +1,6 @@
+# 0.10.7
+	- Added hackerman.ui.daemon even though i dont understand daemons
+
 # 0.10.6
 	- Added hackerman.transport.fileio just for fun
 
