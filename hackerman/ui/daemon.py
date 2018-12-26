@@ -15,7 +15,7 @@ class Daemon(object):
 				log("Connection from [%s]" % str(addr))
 
 				msg = conn.recv(4096)
-				log("Msg recieved (4096 bytes)")
+				log("Msg recieved (%i bytes)" % len(msg))
 
 				on_msg(msg, conn)
 				conn.close()

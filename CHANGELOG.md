@@ -1,3 +1,6 @@
+# 0.10.8
+	- Improved daemon
+
 # 0.10.7
 	- Added hackerman.ui.daemon even though i dont understand daemons
 
