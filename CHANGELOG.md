@@ -1,3 +1,6 @@
+# 0.10.9
+	- Fixed hackerman.utils.cd
+
 # 0.10.8
 	- Improved daemon
 

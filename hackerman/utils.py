@@ -23,7 +23,7 @@ def cd(newdir):
 	try:
 		os.chdir(newdir)
 		return True
-	except FileNotFoundError:
+	except:
 		return False
 
 
