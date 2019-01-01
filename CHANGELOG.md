@@ -1,3 +1,11 @@
+# 0.10.10
+	- Added hackerman.payloads.bind.tcp and hackerman.handlers.bind_tcp
+	- Added hackerman.payloads.reverse._http and hackerman.handlers.reverse_http
+	- Added the base handler and payload for bind
+	- Added XORCrypt class to hackerman.crypto.xor
+	- Started hackerman.transport._http but i might abandon it
+	- Added hackerman.ui.betterexec for capturing print() and stuff in exec()
+
 # 0.10.9
 	- Fixed hackerman.utils.cd
 
