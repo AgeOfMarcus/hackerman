@@ -7,7 +7,7 @@ class FakeIO(object):
 		self.mem += a
 	def read(self):
 		return self.mem
-	def clear(self):
+	def flush(self):
 		self.mem = ""
 
 class BetterExec(object):
@@ -19,5 +19,5 @@ class BetterExec(object):
 		exec(code)
 		sys.stdout = old
 		res = self.fd.read()
-		self.fd.clear()
+		self.fd.flush()
 		return res

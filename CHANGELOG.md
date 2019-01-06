@@ -1,3 +1,6 @@
+# 0.10.11
+	- Fixed betterexec
+
 # 0.10.10
 	- Added hackerman.payloads.bind.tcp and hackerman.handlers.bind_tcp
 	- Added hackerman.payloads.reverse._http and hackerman.handlers.reverse_http
