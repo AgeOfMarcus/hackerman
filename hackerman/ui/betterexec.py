@@ -11,19 +11,17 @@ class FakeIO(object):
 class BetterExec(object):
 	def __init__(self):
 		self.stdout = FakeIO()
-		#self.stderr = FakeIO()
 	def exec(self, code):
 		stdout = sys.stdout
-		#stderr = sys.stderr
 		sys.stdout = self.stdout
-		#sys.stderr = self.stderr
 
-		exec(code)
+		try:
+			exec(code)
+			res = self.stdout.mem, 0
+		except Exception as e:
+			res = e, 1
 
 		sys.stdout = stdout
-		#sys.stderr = stderr
-		res = self.stdout.mem#, self.stderr.mem
 		self.stdout.mem = ""
-		#self.stderr.mem = ""
 		
 		return res
