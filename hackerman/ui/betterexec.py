@@ -5,19 +5,25 @@ class FakeIO(object):
 		self.mem = ""
 	def write(self, a):
 		self.mem += a
-	def read(self):
-		return self.mem
 	def flush(self):
-		self.mem = ""
+		pass
 
 class BetterExec(object):
 	def __init__(self):
-		self.fd = FakeIO()
+		self.stdout = FakeIO()
+		self.stderr = FakeIO()
 	def exec(self, code):
-		old = sys.stdout
-		sys.stdout = self.fd
+		stdout = sys.stdout
+		stderr = sys.stderr
+		sys.stdout = self.stdout
+		sys.stderr = self.stderr
+
 		exec(code)
-		sys.stdout = old
-		res = self.fd.read()
-		self.fd.flush()
+
+		sys.stdout = stdout
+		sys.stderr = stderr
+		res = self.stdout.mem, self.stderr.mem
+		self.stdout.mem = ""
+		self.stderr.mem = ""
+		
 		return res

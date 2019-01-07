@@ -1,5 +1,6 @@
-import os, base64, hashlib, sqlite3, socket, uuid, random
+import os, base64, hashlib, sqlite3, socket, uuid, random, qrcode
 from subprocess import Popen, PIPE
+from hackerman.ui import betterexec
 
 uid = lambda: str(uuid.uuid4())
 safe_uid = lambda: ''.join(str(uuid.uuid4()).split("-"))
@@ -56,3 +57,8 @@ def getfilesize(fn):
 	r = sh("du "+fn).decode().strip().split("\n")[-1]
 	bt = r.split("\t")[0]
 	return int(bt)
+
+def qr(text):
+	be = betterexec.BetterExec()
+	q = be.exec("import qrcode; code=qrcode.QRCode(); code.add_data('%s'); code.print_ascii()" % str(text))
+	return q
