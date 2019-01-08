@@ -1,3 +1,7 @@
+# 0.10.13 (idk what happened to 12)
+	- betterexec improvements
+	- hackerman.utils.qr fix/improvement
+
 # 0.10.11
 	- Improved betterexec
 	- Added qr function to hackerman.utils

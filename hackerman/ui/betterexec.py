@@ -2,11 +2,18 @@ import sys
 
 class FakeIO(object):
 	def __init__(self):
-		self.mem = ""
-	def write(self, a):
-		self.mem += a
+		self.mem = []
+	def write(self, *args):
+		if type(args) == list or type(args) == tuple:
+			[self.mem.append(i) for i in args]
+		else:
+			self.mem.append(args)
 	def flush(self):
 		pass
+	def read(self):
+		return ''.join(self.mem)
+	def clear(self):
+		self.mem = []
 
 class BetterExec(object):
 	def __init__(self):
@@ -17,11 +24,11 @@ class BetterExec(object):
 
 		try:
 			exec(code)
-			res = self.stdout.mem, 0
+			res = self.stdout.read(), 0
 		except Exception as e:
 			res = e, 1
 
 		sys.stdout = stdout
-		self.stdout.mem = ""
+		self.stdout.clear()
 		
 		return res

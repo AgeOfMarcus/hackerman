@@ -61,4 +61,4 @@ def getfilesize(fn):
 def qr(text):
 	be = betterexec.BetterExec()
 	q = be.exec("import qrcode; code=qrcode.QRCode(); code.add_data('%s'); code.print_ascii()" % str(text.encode())[2:-1])
-	return q
+	return False if (q[1] == 1) else q[0]
