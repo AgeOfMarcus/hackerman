@@ -1,3 +1,8 @@
+# 0.10.14
+	- Added to hackerman.utils
+		from_id
+		disassemble
+
 # 0.10.13 (idk what happened to 12)
 	- betterexec improvements
 	- hackerman.utils.qr fix/improvement

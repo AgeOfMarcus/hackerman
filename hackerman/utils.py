@@ -1,4 +1,4 @@
-import os, base64, hashlib, sqlite3, socket, uuid, random, qrcode
+import os, base64, hashlib, sqlite3, socket, uuid, random, qrcode, dis, ctypes
 from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
 
@@ -62,3 +62,12 @@ def qr(text):
 	be = betterexec.BetterExec()
 	q = be.exec("import qrcode; code=qrcode.QRCode(); code.add_data('%s'); code.print_ascii()" % str(text.encode())[2:-1])
 	return False if (q[1] == 1) else q[0]
+
+def disassemble(bytecode):
+	dis.dis(bytecode)
+
+def from_id(id):
+	try:
+		return 0, ctypes.cast(id, ctypes.py_object).value
+	except Exception as e:
+		return 1, e
