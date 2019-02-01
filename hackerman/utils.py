@@ -1,4 +1,5 @@
-import os, base64, hashlib, sqlite3, socket, uuid, random, qrcode, dis, ctypes
+import os, base64, hashlib, sqlite3, socket, uuid
+import random, qrcode, dis, ctypes, sys
 from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
 
@@ -71,3 +72,14 @@ def from_id(id):
 		return 0, ctypes.cast(id, ctypes.py_object).value
 	except Exception as e:
 		return 1, e
+
+def zerostr(string):
+	if not isinstance(string, str):
+		raise TypeError("Expected a string, got: "+str(type(string)).split("'")[1])
+	location = id(string) + 20
+	size = sys.getsizeof(string) - 20
+	try:
+		memset = ctypes.cdll.msvcrt.memset # windows only
+	except:
+		memset = ctypes.memset
+	memset(location, 0, size)

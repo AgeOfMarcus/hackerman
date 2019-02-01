@@ -1,6 +1,11 @@
+# 0.10.15
+	- Added to hackerman.utils
+		- zerostr: zeroes out the memory location of a variable containing a string
+			WARNING: WIP - possible segfault
 # 0.10.14
 	- Added to hackerman.utils
 		from_id
+			WARNING: possible segfault
 		disassemble
 
 # 0.10.13 (idk what happened to 12)
