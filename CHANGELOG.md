@@ -1,3 +1,8 @@
+# 0.10.16
+	- Changed hackerman.ui.betterexec
+		- FileIO -> FakeStdout
+		- Added FakeStdin (ooh!)
+
 # 0.10.15
 	- Added to hackerman.utils
 		- zerostr: zeroes out the memory location of a variable containing a string

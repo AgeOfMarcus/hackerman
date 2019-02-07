@@ -1,6 +1,6 @@
 import sys
 
-class FakeIO(object):
+class FakeStdout(object):
 	def __init__(self):
 		self.mem = []
 	def write(self, *args):
@@ -14,10 +14,21 @@ class FakeIO(object):
 		return ''.join(self.mem)
 	def clear(self):
 		self.mem = []
+class FakeStdin(object):
+	def __init__(self):
+		self.read = ""
+	def read(self, *args):
+		return self.read
+	def flush(self):
+		pass
+	def write(self, *args):
+		pass
+	def clear(self):
+		self.read = ""
 
 class BetterExec(object):
 	def __init__(self):
-		self.stdout = FakeIO()
+		self.stdout = FakeStdout()
 	def exec(self, code):
 		stdout = sys.stdout
 		sys.stdout = self.stdout
