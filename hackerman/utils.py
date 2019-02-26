@@ -2,12 +2,12 @@ import os, base64, hashlib, sqlite3, socket, uuid
 import random, qrcode, dis, ctypes, sys
 from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
+from hackerman.hashing import sha256
 
 uid = lambda: str(uuid.uuid4())
 safe_uid = lambda: ''.join(str(uuid.uuid4()).split("-"))
 
 sh = lambda cmd: Popen(cmd,stdout=PIPE,shell=True).communicate()[0]
-sha256 = lambda raw: hashlib.sha256(raw).hexdigest()
 
 b64e = lambda raw: base64.b64encode(raw).decode()
 b64d = lambda b64: base64.b64decode(b64)

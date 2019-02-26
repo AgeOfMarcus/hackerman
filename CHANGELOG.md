@@ -1,3 +1,7 @@
+# 0.10.17
+	- Added hashing.sha256
+	- Moved utils.sha256 to hashing.sha256
+
 # 0.10.16
 	- Changed hackerman.ui.betterexec
 		- FileIO -> FakeStdout
