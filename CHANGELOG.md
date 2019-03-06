@@ -1,3 +1,9 @@
+# 0.10.19 (what happened to 0.10.18??)
+	- Added hackerman.ui.output
+		- console (class)
+			- alert "[!] "
+			- etc
+
 # 0.10.17
 	- Added hashing.sha256
 	- Moved utils.sha256 to hashing.sha256
