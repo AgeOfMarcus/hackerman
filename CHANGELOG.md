@@ -1,8 +1,12 @@
+# 0.11.0
+	- Added to hackerman.ui.output
+		- msg (class)
+			- alert, info, info2, etc
+
 # 0.10.19 (what happened to 0.10.18??)
 	- Added hackerman.ui.output
-		- console (class)
-			- alert "[!] "
-			- etc
+		- Notifier (object) - async io
+		- color (class) - colors & stuff
 
 # 0.10.17
 	- Added hashing.sha256

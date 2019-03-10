@@ -1,4 +1,3 @@
-from termcolor import colored as c
 import _thread, time, sys
 
 class color:
@@ -12,6 +11,14 @@ class color:
 	BOLD = '\033[1m'
 	UNDERLINE = '\033[4m'
 	END = '\033[0m'
+
+class msg:
+	alert = lambda msg: color.RED + color.BOLD + "[!] " + color.END + color.UNDERLINE + msg + color.END
+	info = lambda msg: color.YELLOW + color.BOLD + "[*] " + color.END + color.UNDERLINE + msg + color.END
+	plus = lambda msg: color.GREEN + color.BOLD + "[+] " + color.END + color.UNDERLINE + msg + color.END
+	minus = lambda msg: color.DARKCYAN + color.BOLD + "[-] " + color.END + color.UNDERLINE + msg + color.END
+	loot = lambda msg: color.GREEN + color.BOLD + "[$] " + color.END + color.UNDERLINE + msg + color.END
+	info2 = lambda msg: color.YELLOW + color.BOLD + "[~] " + color.END + color.UNDERLINE + msg + color.END
 
 class Notifier(object):
 	def __init__(self, prompt):
