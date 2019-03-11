@@ -1,3 +1,7 @@
+# 0.11.1
+	- Added to hackerman.utils
+		- blank_px - base64 encoded data for a 1x1 transparent pixel (png)
+
 # 0.11.0
 	- Added to hackerman.ui.output
 		- msg (class)

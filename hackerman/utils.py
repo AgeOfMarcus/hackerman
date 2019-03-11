@@ -4,6 +4,8 @@ from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
 from hackerman.hashing import sha256
 
+blank_px = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII="
+
 uid = lambda: str(uuid.uuid4())
 safe_uid = lambda: ''.join(str(uuid.uuid4()).split("-"))
 
@@ -24,7 +26,6 @@ def force_decode(raw):
 def cd(newdir):
 	try:
 		os.chdir(newdir)
-		return True
 	except:
 		return False
 
