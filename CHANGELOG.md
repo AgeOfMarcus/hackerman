@@ -1,3 +1,8 @@
+# 0.11.2
+	- Added hackerman.crypto.wrapper
+		- Server (object)
+		- Client (object)
+
 # 0.11.1
 	- Added to hackerman.utils
 		- blank_px - base64 encoded data for a 1x1 transparent pixel (png)
