@@ -1,3 +1,7 @@
+# 0.11.3
+	- Added to hackerman.utils
+		- pythonShell - interactive python console
+
 # 0.11.2
 	- Added hackerman.crypto.wrapper
 		- Server (object)

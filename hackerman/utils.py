@@ -1,10 +1,14 @@
 import os, base64, hashlib, sqlite3, socket, uuid
-import random, qrcode, dis, ctypes, sys
+import random, qrcode, dis, ctypes, sys, code
 from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
 from hackerman.hashing import sha256
 
 blank_px = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII="
+
+def pythonShell(local=None, banner="entering InteractiveConsole (Ctrl+D to exit)..."):
+	local = dict(globals(), **local) if local else globals()
+	code.interact(banner, local=local)
 
 uid = lambda: str(uuid.uuid4())
 safe_uid = lambda: ''.join(str(uuid.uuid4()).split("-"))
