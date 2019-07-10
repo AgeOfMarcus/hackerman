@@ -1,0 +1,9 @@
+pycryptodome
+flask
+flask-cors
+requests
+scapy
+pyscreenshot
+pynput
+qrcode
+bitcoin
