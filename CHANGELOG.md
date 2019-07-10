@@ -1,3 +1,10 @@
+# 0.11.4
+	- Added to hackerman.crypto
+		- btc
+			- generate_private_key
+			- private_key_to_public_key
+			- public_key_to_address
+
 # 0.11.3
 	- Added to hackerman.utils
 		- pythonShell - interactive python console
