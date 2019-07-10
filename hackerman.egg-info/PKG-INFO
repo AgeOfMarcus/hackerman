@@ -1,4 +1,4 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: hackerman
 Version: 0.11.4
 Summary: A python library for penetration testing, security, development, and fun.
@@ -93,3 +93,4 @@ Description: # hackerman
         
         
 Platform: UNKNOWN
+Description-Content-Type: text/markdown
