@@ -1,10 +1,21 @@
 import os, base64, hashlib, sqlite3, socket, uuid
 import random, qrcode, dis, ctypes, sys, code
+import ast
 from subprocess import Popen, PIPE
 from hackerman.ui import betterexec
 from hackerman.hashing import sha256
 
 blank_px = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII="
+
+def bin2int(x):
+	if type(x) == int:
+		b = "0b"+str(x)
+	else:
+		if not x.startswith("0b"):
+			b = "0b"+x
+		else:
+			b = x
+	return ast.literal_eval(b)
 
 def pythonShell(local=None, banner="entering InteractiveConsole (Ctrl+D to exit)..."):
 	local = dict(globals(), **local) if local else globals()

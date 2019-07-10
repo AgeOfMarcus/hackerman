@@ -1,3 +1,7 @@
+# 0.11.5
+	- Added to hackerman.utils
+		- bin2int (binary to integer)
+
 # 0.11.4
 	- Added to hackerman.crypto
 		- btc

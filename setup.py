@@ -5,7 +5,7 @@ def read(fname):
 	return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setuptools.setup(name='hackerman',
-	version='0.11.4',
+	version='0.11.5',
 	description='A python library for penetration testing, security, development, and fun.',
 	long_description=read("README.md"),
 	long_description_content_type="text/markdown",
