@@ -25,4 +25,5 @@ setuptools.setup(name='hackerman',
 		"pynput",
 		"qrcode",
 		"bitcoin",
+		"sympy",
 	])
