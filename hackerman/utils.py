@@ -7,6 +7,11 @@ from hackerman.hashing import sha256
 
 blank_px = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII="
 
+class tryExceptHandler(object):
+	def __enter__(self): pass
+	def __exit__(self, *args): return True
+tryExcept = tryExceptHandler()
+
 def bin2int(x):
 	if type(x) == int:
 		b = "0b"+str(x)
