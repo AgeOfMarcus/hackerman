@@ -15,5 +15,5 @@ def sha1(raw, hex=True):
 	return r_sha1(raw).hexdigest() if hex else r_sha1(raw).digest()
 def md5(raw, hex=True):
 	return r_md5(raw).hexdigest() if hex else r_md5(raw).digest()
-def natzil(raw, hex=True):
-	return r_badhash(raw).hexdigest() if hex else r_badhash(raw).digest()
+def natzil(raw):
+	return r_badhash(raw).hexdigest()
