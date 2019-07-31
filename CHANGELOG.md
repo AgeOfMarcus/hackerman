@@ -1,3 +1,8 @@
+# 0.11.6:
+	- Added to hackerman.hashing
+		- natzil (source inside file)
+	- Removed all underlined spaces from hackerman.ui.output.msg.*
+
 # 0.11.5
 	- Added to hackerman.utils
 		- bin2int (binary to integer)
