@@ -7,6 +7,10 @@ from hackerman.hashing import sha256
 
 blank_px = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII="
 
+def inline_with(ctx, fn):
+	with ctx:
+		return fn()
+
 class tryExceptHandler(object):
 	def __enter__(self): pass
 	def __exit__(self, *args): return True

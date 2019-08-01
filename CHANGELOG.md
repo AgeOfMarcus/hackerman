@@ -1,3 +1,8 @@
+# 0.11.7
+	- Added to hackerman.utils
+		- A function for inline `with x:` statements
+			- Doesn't work in many cases, but will do the trick until python 3.8 where it gets easier
+
 # 0.11.6:
 	- Added to hackerman.hashing
 		- natzil (source inside file)
