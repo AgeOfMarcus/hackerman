@@ -1,3 +1,7 @@
+# 0.11.8
+	- Modified hackerman.ui.output.Notifier
+		- Fixed error where order of messages would get mixed up
+
 # 0.11.7
 	- Added to hackerman.utils
 		- A function for inline `with x:` statements

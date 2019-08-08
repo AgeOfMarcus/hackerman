@@ -29,7 +29,8 @@ class Notifier(object):
 		time.sleep(delay)
 		while check():
 			try:
-				for msg in self.messages:
+				if len(self.messages) > 0:
+					msg = self.messages[0]
 					sys.stdout.flush()
 					sys.stdout.write("\r%s\n%s" % (msg, self.prompt))
 					self.messages.remove(msg)
