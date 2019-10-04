@@ -64,10 +64,10 @@ def interactive_sh(cmd, out_func):
 		out_func(ln)
 
 
-def sqlexec(cmd,db_file):
+def sqlexec(cmd,db_file, values=None):
 	with sqlite3.connect(db_file) as db:
 		try:
-			res = db.cursor().execute(cmd).fetchall()
+			res = db.cursor().execute(cmd).fetchall() if values is None else db.cursor().execute(cmd,values).fetchall()
 		except Exception as e:
 			res = str(e)
 		db.commit()
