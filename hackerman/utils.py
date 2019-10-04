@@ -27,7 +27,7 @@ def bin2int(x):
 	return ast.literal_eval(b)
 
 def pythonShell(local=None, banner="entering InteractiveConsole (Ctrl+D to exit)..."):
-	local = dict(globals(), **local) if local else globals()
+	local = local or globals()
 	code.interact(banner, local=local)
 
 uid = lambda: str(uuid.uuid4())
