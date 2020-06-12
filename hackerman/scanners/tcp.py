@@ -13,8 +13,7 @@ def rand_ipv6():
 	addr_str = addr.compressed
 	return addr_str
 
-def knock(ip,port=None, timeout=0.5):
-	port = ip.split(":")[1] if port is None else port
+def knock(ip, port, timeout=0.5):
 	c = socket.socket()
 	c.settimeout(timeout)
 	try:
