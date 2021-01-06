@@ -1,5 +1,3 @@
-import base64
-
 def to_num(raw):
 	res = []
 	for i in raw: res.append(i)
