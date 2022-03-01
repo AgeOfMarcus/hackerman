@@ -21,7 +21,7 @@ def generate() -> Tuple[str, rsa.rsa.RSAPrivateKey]:
     half_digest = digest[:10]
     return base64.b32encode(half_digest).decode("utf-8") + '.onion', rsa_key
 
-def exportKey(rsa_key: rsa.RSAPrivateKey) -> str:
+def exportKey(rsa_key: rsa.rsa.RSAPrivateKey) -> str:
     """
     Exports the given RSA key to a PEM string.
 
