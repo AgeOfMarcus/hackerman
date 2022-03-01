@@ -4,6 +4,8 @@ def xor(raw: bytes, passwd: str) -> bytes:
         key *= (len(raw) // len(key)) + 1
     return bytes(a ^ b for a, b in zip(raw, key))
 
+encrypt, decrypt = xor, xor # alias
+
 class XORCrypt(object):
     def __init__(self, password):
         self.encrypt = lambda raw: xor(raw, password)

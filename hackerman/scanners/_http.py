@@ -1,10 +1,10 @@
 from hackerman.scanners  import tcp
 import socket, requests
 
-def knock(url):
+def knock(url, timeout=1):
     try:
-        req = requests.get(url)
-        return True
+        req = requests.get(url, timeout=timeout)
+        return req.status_code
     except:
         return False
 

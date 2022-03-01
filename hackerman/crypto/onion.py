@@ -19,7 +19,7 @@ def generate() -> Tuple[str, rsa.rsa.RSAPrivateKey]:
     )
     digest = sha1(public_bytes, hex=False) # hex=False returns bytes
     half_digest = digest[:10]
-    return base64.b32encode(half_digest).decode("utf-8") + '.onion', rsa_key
+    return base64.b32encode(half_digest).decode("utf-8").lower() + '.onion', rsa_key
 
 def exportKey(rsa_key: rsa.rsa.RSAPrivateKey) -> str:
     """
