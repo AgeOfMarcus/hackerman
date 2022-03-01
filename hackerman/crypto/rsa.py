@@ -1,23 +1,78 @@
-from Crypto.PublicKey import RSA
-import os
+import cryptography
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
 
-class Key(object):
-	def __init__(self, imp=False):
-		if imp:
-			self.key = imp
-		else:
-			self.key = RSA.generate(4096, os.urandom)
-	def encrypt(self, raw):
-		enc = self.key.publickey().encrypt(raw, 1024)[0]
-		return enc
-	def decrypt(self, raw):
-		dec = self.key.decrypt(raw)
-		return dec
-	def export(self, fn):
-		with open(fn,"wb") as f:
-			f.write(self.key.exportKey())
+def generate_key(size=4096) -> rsa.RSAPrivateKey:
+    """
+    Generates a new private key.
 
-def importKey(fn):
-	dat = open(fn,"r").read()
-	key = RSA.importKey(dat)
-	return Key(imp=key)
+    :param size: The size of the key. Defaults to 4096.
+    :return: The private key.
+    """
+    return rsa.generate_private_key(
+        public_exponent=65537,
+        key_size=size,
+        backend=default_backend()
+    )
+
+def export_private_key(rsa_key: rsa.RSAPrivateKey) -> str:
+    """
+    Exports the given RSA key to a PEM string.
+
+    :param rsa_key: The RSA key to export.
+    :return: The PEM string.
+    """
+    return rsa_key.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PrivateFormat.TraditionalOpenSSL,
+        encryption_algorithm=serialization.NoEncryption()
+    ).decode("utf-8")
+
+def export_public_key(rsa_key: rsa.RSAPublicKey) -> str:
+    """
+    Exports the given RSA key to a PEM string.
+
+    :param rsa_key: The RSA key to export.
+    :return: The PEM string.
+    """
+    return rsa_key.public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.PKCS1
+    ).decode("utf-8")
+
+def encrypt(rsa_key: rsa.RSAPublicKey, data: bytes) -> bytes:
+    """
+    Encrypts data with given RSA key.
+
+    :param rsa_key: The RSA key to use.
+    :param data: The data to encrypt.
+    :return: The encrypted data.
+    """
+    return rsa_key.encrypt(
+        data,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA1()),
+            algorithm=hashes.SHA1(),
+            label=None
+        )
+    )
+
+def decrypt(rsa_key: rsa.RSAPrivateKey, data: bytes) -> bytes:
+    """
+    Decrypts data with given RSA key.
+
+    :param rsa_key: The RSA key to use.
+    :param data: The data to decrypt.
+    :return: The decrypted data.
+    """
+    return rsa_key.decrypt(
+        data,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA1()),
+            algorithm=hashes.SHA1(),
+            label=None
+        )
+    )

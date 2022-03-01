@@ -1,0 +1,1 @@
+from cryptography.fernet import Fernet # that's all

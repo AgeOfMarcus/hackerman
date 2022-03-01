@@ -1,15 +1,10 @@
-from Crypto.Cipher import XOR
-
-def encrypt(raw, passwd):
-	cipher = XOR.new(passwd)
-	enc = cipher.encrypt(raw)
-	return enc
-def decrypt(raw, passwd):
-	cipher = XOR.new(passwd)
-	dec = cipher.decrypt(raw)
-	return dec
+def xor(raw: bytes, passwd: str) -> bytes:
+    key = passwd.encode()
+    if len(key) < len(raw):
+        key *= (len(raw) // len(key)) + 1
+    return bytes(a ^ b for a, b in zip(raw, key))
 
 class XORCrypt(object):
-	def __init__(self, password):
-		self.encrypt = lambda raw: encrypt(raw, password)
-		self.decrypt = lambda raw: decrypt(raw, password)
+    def __init__(self, password):
+        self.encrypt = lambda raw: xor(raw, password)
+        self.decrypt = lambda raw: xor(raw, password)

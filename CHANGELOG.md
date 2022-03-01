@@ -1,3 +1,16 @@
+# 0.99.0
+	- First update in a good couple years
+	- Added function descriptions and type annotations to some parts
+	- Rewrote some old code that wasn't working anymore
+		- Now using the cryptography library instead of pycryptodome
+		- `hackerman.crypto.xor` completely rewrote (may break old code)
+	- Removed some things
+		- Everything related to ptpb is gone as the service shut down
+		- Same with serveo
+		- Blowfish encryption is gone
+		- `hackerman.algorithms` was useless. Now it's gone
+	- Added `hackerman.crypto.fernet` but really it's just `cryptography.fernet`
+
 # 0.11.8
 	- Modified hackerman.ui.output.Notifier
 		- Fixed error where order of messages would get mixed up

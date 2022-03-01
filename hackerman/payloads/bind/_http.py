@@ -9,7 +9,7 @@ class Server(object):
         self.addr = addr
     def run(self):
         app = Flask(__name__)
-	CORS(app)
+    CORS(app)
         @app.route("/", methods=['POST'])
         def app_main():
             pl = request.form
